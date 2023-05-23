@@ -76,3 +76,28 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.shimmer__bg {
+  background: var(--grey-300);
+}
+.shimmer figure {
+  height: 9rem;
+}
+.shimmer .restaurant__name,
+.cuisines,
+.rating_const * {
+  height: 1rem;
+}
+
+.shimmer .cuisines,
+.rating_const * {
+  height: 0.8rem;
+}
+
+.shimmer .rating_const span {
+  width: 20%;
+}
+.shimmer .cuisines,
+.rating_const div {
+  width: 30%;
+}

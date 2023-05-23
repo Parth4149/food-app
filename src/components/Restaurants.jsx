@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from "./ui/RestaurantCard";
 
 const Restaurants = ({ restaurants }) => {
   return (
