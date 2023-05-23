@@ -1,24 +1,28 @@
 import { useState } from "react";
 
-const Search = ({ restaurantList, SetRestaurants }) => {
+const filteredRestaurants = (searchText, restaurantList) => {
+  return restaurantList?.filter((restaurant) => {
+    if (restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())) {
+      console.log(restaurant);
+      return restaurant;
+    }
+  });
+};
+
+const Search = ({ restaurantList, setRestaurants }) => {
   const [searchText, setSearchText] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
     // if query is empty
     if (searchText === "") {
-      SetRestaurants(restaurantList);
+      setRestaurants(restaurantList);
       return;
     }
-    const filteredRestaurants = restaurantList.filter((restaurant) => {
-      if (
-        restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())
-      ) {
-        return restaurant;
-      }
-    });
-    SetRestaurants(filteredRestaurants);
+
+    setRestaurants(filteredRestaurants(searchText, restaurantList));
   };
+
   return (
     <section className="search__container">
       <div className="search__container__inner">

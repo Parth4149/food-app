@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { restaurantsData } from "../data.js";
 import Search from "./ui/Search.jsx";
 import Restaurants from "./Restaurants";
+
 const Body = () => {
-  const restaurantList = restaurantsData.cards[0].data.data.cards;
-  const [restaurants, SetRestaurants] = useState(restaurantList);
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [restaurants, setRestaurants] = useState([{}, {}, {}, {}, {}, {}, {}, {}]);
 
   useEffect(() => {
     getRestaurants();
@@ -16,12 +16,14 @@ const Body = () => {
     );
     const json = await data.json();
     // console.log(json);
-    SetRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    const cards = json?.data?.cards[2]?.data?.data?.cards;
+    setAllRestaurants(cards);
+    setRestaurants(cards);
   }
 
   return (
     <main className="body">
-      <Search restaurantList={restaurantList} SetRestaurants={SetRestaurants} />
+      <Search restaurantList={allRestaurants} setRestaurants={setRestaurants} />
       <Restaurants restaurants={restaurants} />
     </main>
   );

@@ -304,7 +304,7 @@ export const restaurantsData = {
               data: {
                 type: "F",
                 id: "323897",
-                name: "Nini's Kitchen",
+                name: " 's Kitchen",
                 uuid: "9b80ee5c-a510-4cad-89bb-1f57b08b9e63",
                 city: "93",
                 area: "Vallabh Vidyanagar",
