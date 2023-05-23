@@ -4,7 +4,7 @@ import Restaurants from "./Restaurants";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
-  const [restaurants, setRestaurants] = useState([{}, {}, {}, {}, {}, {}, {}, {}]);
+  const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
     getRestaurants();
@@ -23,7 +23,12 @@ const Body = () => {
 
   return (
     <main className="body">
-      <Search restaurantList={allRestaurants} setRestaurants={setRestaurants} />
+      <Search
+        allRestaurants={allRestaurants}
+        restaurants={restaurants}
+        setRestaurants={setRestaurants}
+      />
+      
       <Restaurants restaurants={restaurants} />
     </main>
   );

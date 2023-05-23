@@ -23,7 +23,7 @@ const RestaurantCard = (props) => {
     image.onload = () => {
       mountedRef.current = setTimeout(() => {
         setImg(image);
-      }, 200);
+      }, 300);
     };
 
     return () => {
