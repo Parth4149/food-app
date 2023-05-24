@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const filteredRestaurants = (searchText, allRestaurants) => {
   return allRestaurants?.filter((restaurant) => {
-    if (restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())) {
+    if (restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())) {
       return restaurant;
     }
   });
