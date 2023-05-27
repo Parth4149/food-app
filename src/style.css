@@ -28,6 +28,7 @@
   margin: auto;
   max-width: 1200px;
 }
+
 .seeAllRestaurants {
   display: flex;
   flex-wrap: wrap;

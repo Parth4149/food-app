@@ -1,8 +1,9 @@
+import { useState } from "react";
 import Logo from "../asserts/Logo";
 
 const getUserNameFromLocalStorage = () => {
   let username = localStorage.getItem("username");
-  return username ? JSON.parse(username) : "";
+  return username ? username : "";
 };
 
 const authenticateUser = () => {
@@ -11,6 +12,13 @@ const authenticateUser = () => {
 };
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(authenticateUser());
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    localStorage.setItem("username", "user123");
+  };
+
   return (
     <header className="header">
       <div className="header__inner">
@@ -23,10 +31,10 @@ const Header = () => {
             <li>About</li>
             <li>Cart</li>
             <li>
-              {authenticateUser() ? (
-                <button>Logout</button>
+              {isLoggedIn ? (
+                <button onClick={() => setIsLoggedIn(false)}>Logout</button>
               ) : (
-                <button>Login</button>
+                <button onClick={handleLogin}>Login</button>
               )}
             </li>
           </ul>

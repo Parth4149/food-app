@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Search from "./ui/Search.jsx";
 import Restaurants from "./Restaurants";
+import Shimmers from "./Shimmers";
+import ShimmerRestaurantCard from "./ui/ShimmerRestaurantCard";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -28,8 +30,11 @@ const Body = () => {
         restaurants={restaurants}
         setRestaurants={setRestaurants}
       />
-      
-      <Restaurants restaurants={restaurants} />
+      {allRestaurants?.length === 0 ? (
+        <Shimmers />
+      ) : (
+        <Restaurants restaurants={restaurants} />
+      )}
     </main>
   );
 };
