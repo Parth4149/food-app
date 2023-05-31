@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+
 import Logo from "../asserts/Logo";
 
 const getUserNameFromLocalStorage = () => {
@@ -23,13 +25,26 @@ const Header = () => {
     <header className="header">
       <div className="header__inner">
         <figure className="logo__container">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </figure>
-        <nav className="nav">
+        <nav id="navbar">
           <ul className="nav__list">
-            <li>Home</li>
-            <li>About</li>
-            <li>Cart</li>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/cart">Cart</NavLink>
+            </li>
             <li>
               {isLoggedIn ? (
                 <button onClick={() => setIsLoggedIn(false)}>Logout</button>

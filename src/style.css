@@ -10,15 +10,23 @@
   align-items: center;
   max-width: 1200px;
 }
-.nav {
+#navbar {
   margin-right: 2rem;
 }
-.nav ul {
+#navbar ul {
   display: flex;
 }
-.nav ul li {
+#navbar ul li {
   padding-left: 1.5rem;
 }
+#navbar ul li a {
+  all: unset;
+  cursor: pointer;
+}
+#navbar a.active {
+  color: var(--primary-700);
+}
+
 .logo {
   width: 2rem;
   height: 2rem;
@@ -101,4 +109,12 @@
 .shimmer .cuisines,
 .rating_const div {
   width: 30%;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.mt-24 {
+  margin-top: 24px;
 }

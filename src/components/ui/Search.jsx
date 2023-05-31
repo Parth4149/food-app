@@ -2,7 +2,9 @@ import { useState } from "react";
 
 const filteredRestaurants = (searchText, allRestaurants) => {
   return allRestaurants?.filter((restaurant) => {
-    if (restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())) {
+    if (
+      restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
+    ) {
       return restaurant;
     }
   });
@@ -36,7 +38,7 @@ const Search = ({ allRestaurants, restaurants, setRestaurants }) => {
         </div>
       </section>
       {allRestaurants.length > 0 && restaurants?.length === 0 && (
-        <article style={{ textAlign: "center", margin: "2rem 0"}}>
+        <article style={{ textAlign: "center", margin: "2rem 0" }}>
           <h3>No match found for &quot;{searchText}&quot;</h3>
         </article>
       )}
