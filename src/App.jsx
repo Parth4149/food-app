@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import "./index.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <Body />
+      <Outlet /> {/* An <Outlet> should be used in parent route elements to render their child route elements.*/}
       <Footer />
     </>
   );
@@ -24,14 +24,20 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <Error />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+    ],
   },
 ]);
 
