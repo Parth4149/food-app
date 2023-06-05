@@ -19,10 +19,6 @@
 #navbar ul li {
   padding-left: 1.5rem;
 }
-#navbar ul li a {
-  all: unset;
-  cursor: pointer;
-}
 #navbar a.active {
   color: var(--primary-700);
 }
@@ -117,4 +113,23 @@
 
 .mt-24 {
   margin-top: 24px;
+}
+
+
+.restaurantInfo-main {
+  max-width: 800px;
+  margin: auto;
+}
+
+.recommended-inner {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: .5rem 1rem;
+  border-bottom: 1px solid var(--grey-300);
+}
+
+.recommended-inner figure img {
+  width: 5rem;
+  height: 4rem;
 }

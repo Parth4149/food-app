@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Search from "./ui/Search.jsx";
 import Restaurants from "./Restaurants";
 import Shimmers from "./Shimmers";
-import ShimmerRestaurantCard from "./ui/ShimmerRestaurantCard";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);

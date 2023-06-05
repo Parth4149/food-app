@@ -8,12 +8,14 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Error from "./pages/Error";
+import RestaurantInfo from "./pages/RestaurantInfo";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Outlet /> {/* An <Outlet> should be used in parent route elements to render their child route elements.*/}
+      <Outlet />
+      {/* An <Outlet> should be used in parent route elements to render their child route elements.*/}
       <Footer />
     </>
   );
@@ -36,6 +38,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/restaurant/:restaurantId",
+        element: <RestaurantInfo />,
       },
     ],
   },
