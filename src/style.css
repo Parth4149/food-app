@@ -115,21 +115,46 @@
   margin-top: 24px;
 }
 
-
 .restaurantInfo-main {
   max-width: 800px;
   margin: auto;
 }
 
-.recommended-inner {
+.restinfo-section-inner {
   display: flex;
   justify-content: space-between;
   margin: 1rem 0;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--grey-300);
 }
 
-.recommended-inner figure img {
+.restinfo-section-inner figure img {
   width: 5rem;
   height: 4rem;
+}
+
+.restinfo-section > details > summary {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.restinfo-section details:hover {
+  cursor: pointer;
+}
+.restinfo-section .section-border {
+  height: 0.5rem;
+  background: var(--grey-200);
+  margin: 1rem 0;
+}
+
+.restinfo-section-container {
+  border: 1px solid var(--grey-400);
+  padding: 0.5rem;
+}
+
+.restinfo-section .categories-container {
+  margin-left: 2.5rem;
+}
+.restinfo-section .categories-container > details > summary {
+  font-size: 1rem;
+  font-weight: 600;
 }
