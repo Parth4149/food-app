@@ -1,17 +1,17 @@
-import ShimmerRestaurantCard from "./ui/ShimmerRestaurantCard";
+import SkeletonRestaurantCard from "./ui/SkeletonRestaurantCard";
 
-const Shimmers = () => {
+const Skeletons = () => {
   return (
     <section className="seeAllRestaurants">
       {Array(8)
         .fill("")
         .map((_, i) => (
           <article className="restaurant__card" key={i}>
-            <ShimmerRestaurantCard />
+            <SkeletonRestaurantCard />
           </article>
         ))}
     </section>
   );
 };
 
-export default Shimmers;
+export default Skeletons;

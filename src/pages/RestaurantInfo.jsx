@@ -39,7 +39,7 @@ const RestaurantInfo = () => {
     }
     setRestaurantData(json?.data?.cards[0]?.card?.card?.info);
   }
-  console.log("recommended",recommendedRestaurantData);
+  console.log("recommended", recommendedRestaurantData);
   return (
     <main className="restaurantInfo-main">
       {!restaurantData ? (

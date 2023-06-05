@@ -82,27 +82,27 @@
   align-items: center;
 }
 
-.shimmer__bg {
-  background: var(--grey-300);
+.skeleton-bg {
+  background: var(--grey-200);
 }
-.shimmer figure {
+.skeleton figure {
   height: 9rem;
 }
-.shimmer .restaurant__name,
+.skeleton .restaurant__name,
 .cuisines,
 .rating_const * {
   height: 1rem;
 }
 
-.shimmer .cuisines,
+.skeleton .cuisines,
 .rating_const * {
   height: 0.8rem;
 }
 
-.shimmer .rating_const span {
+.skeleton .rating_const span {
   width: 20%;
 }
-.shimmer .cuisines,
+.skeleton .cuisines,
 .rating_const div {
   width: 30%;
 }

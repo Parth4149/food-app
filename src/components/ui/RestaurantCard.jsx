@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { IMG_CDN_URL } from "../../data";
-import ShimmerRestaurantCard from "./ShimmerRestaurantCard";
+import SkeletonRestaurantCard from "./SkeletonRestaurantCard";
 /**
  *  setTimeout() returns a timeoutID which is a positive integer identifying the
  *  timer created as a result of calling the method. The timeoutID can be used to
@@ -50,7 +50,7 @@ const RestaurantCard = (props) => {
           </div>
         </Link>
       ) : (
-        <ShimmerRestaurantCard />
+        <SkeletonRestaurantCard />
       )}
     </article>
   );

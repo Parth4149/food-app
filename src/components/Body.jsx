@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
 import Search from "./ui/Search.jsx";
 import Restaurants from "./Restaurants";
-import Shimmers from "./Shimmers";
+import Skeletons from "./Skeletons";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [restaurants, setRestaurants] = useState([]);
-
-  useEffect(() => {
-    getRestaurants();
-  }, []);
 
   async function getRestaurants() {
     const data = await fetch(
@@ -22,6 +18,10 @@ const Body = () => {
     setRestaurants(cards);
   }
 
+  useEffect(() => {
+    getRestaurants();
+  }, []);
+
   return (
     <main className="body">
       <Search
@@ -30,7 +30,7 @@ const Body = () => {
         setRestaurants={setRestaurants}
       />
       {allRestaurants?.length === 0 ? (
-        <Shimmers />
+        <Skeletons />
       ) : (
         <Restaurants restaurants={restaurants} />
       )}
