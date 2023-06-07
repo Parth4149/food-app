@@ -1,9 +1,9 @@
-import { IMG_CDN_URL } from "../../data";
+import { IMG_CDN_URL } from "../../../data";
 
 const ItemCards = ({ card }) => {
+
   return card.itemCards.map((item) => (
     <div className="restinfo-section-inner" key={item?.card?.info?.id}>
-      {/* {console.log(item?.card?.info)} */}
       <div>
         <h4>{item?.card?.info?.name}</h4>
         <h5>
@@ -14,10 +14,14 @@ const ItemCards = ({ card }) => {
         </h5>
       </div>
       <figure>
-        <img
-          src={IMG_CDN_URL + item?.card?.info?.imageId}
-          alt={item?.card?.info?.name}
-        />
+        {item?.card?.info?.imageId ? (
+          <img
+            src={IMG_CDN_URL + item?.card?.info?.imageId}
+            alt={item?.card?.info?.name}
+          />
+        ) : (
+          <div id="no-restinfo-section-img"></div>
+        )}
       </figure>
     </div>
   ));

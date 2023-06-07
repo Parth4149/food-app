@@ -128,9 +128,11 @@
   border-bottom: 1px solid var(--grey-300);
 }
 
-.restinfo-section-inner figure img {
+.restinfo-section-inner figure > img,
+#no-restinfo-section-img {
   width: 5rem;
   height: 4rem;
+  background: var(--grey-200);
 }
 
 .restinfo-section > details > summary {

@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Error from "./pages/Error";
 import RestaurantInfo from "./pages/RestaurantInfo";
+import NoData from "./pages/NoData";
 
 const App = () => {
   return (
@@ -48,6 +49,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:restaurantId",
         element: <RestaurantInfo />,
+      },
+      {
+        path: "/error",
+        element: <NoData />,
       },
     ],
   },
